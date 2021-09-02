@@ -7,14 +7,25 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 # extract the latest version of the code 
-      - name: Check out the repo
-        uses: actions/checkout@v2
-#        with:
- #          submodules: true
+     # - name: Check out the repo
+      #  uses: actions/checkout@v2
+  #      with:
+   #        submodules: true
+    #       path: ./resource-types
 #      - name: Checkout private tools
 #       uses: actions/checkout@v2
 #       with:
 #            repository: monikamikhaiel/resource-types
+      - name: Checkout reourses-types-website
+        uses: actions/checkout@v2
+        with:
+           path: ./reourses-types-website
+
+      - name: Checkout reourses-types
+        uses: actions/checkout@v2
+        with:
+           repository: monikamikhaiel/reourses-types
+           path: ./reourses-types
 # install go binaries and setup the environment 
       - name: Setup go environment
         uses: actions/setup-go@v2
@@ -22,7 +33,7 @@ jobs:
           go-version: 1.16
 
       - name: build and run test 
-        working-directory: ./warehouse
+        working-directory: ./reourses-types-website/warehouse
         run: |
               pwd
               go build -v
