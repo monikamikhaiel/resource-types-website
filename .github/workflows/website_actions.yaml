@@ -9,8 +9,8 @@ jobs:
 # extract the latest version of the code 
       - name: Check out the repo
         uses: actions/checkout@v2
-        with:
-           submodules: true
+#        with:
+ #          submodules: true
 #      - name: Checkout private tools
 #       uses: actions/checkout@v2
 #       with:
