@@ -9,7 +9,7 @@ jobs:
 # extract the latest version of the code 
       - name: Check out the repo
         uses: actions/checkout@v2
-        
+# install go binaries and setup the environment 
       - name: Setup go environment
         uses: actions/setup-go@v2
         with:
@@ -21,8 +21,8 @@ jobs:
            cd ./warehouse
           
       - name: build tests _test.go
-        run: go build -v ./...*_tests.go
+        run: go build -v *_tests.go
         
       - name: run tests _test.go
-        run: go test ./...*_tests.go
+        run: go test *_tests.go
         
