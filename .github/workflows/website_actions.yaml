@@ -19,8 +19,8 @@ jobs:
    
       - name: Checkout repository
         uses: actions/checkout@master
-      - name: Checkout submodules
-        uses: monikamikhaiel/resource-types-website/git-checkout-submodule-action@master
+        with:
+           submodules: recursive
 # install go binaries and setup the environment 
       - name: Setup go environment
         uses: actions/setup-go@v2
