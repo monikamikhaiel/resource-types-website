@@ -24,6 +24,7 @@ jobs:
       - name: build and run test 
         working-directory: ./warehouse
         run: |
+             cd ./warehouse/
               go build -v
               go test 
         
