@@ -16,16 +16,11 @@ jobs:
 #       uses: actions/checkout@v2
 #       with:
 #            repository: monikamikhaiel/resource-types
-      - name: Checkout reourses-types-website
-        uses: actions/checkout@v2
-        with:
-           path: ./reourses-types-website
-
-      - name: Checkout reourses-types
-        uses: actions/checkout@v2
-        with:
-           repository: monikamikhaiel/reourses-types
-           path: ./reourses-types
+   
+      - name: Checkout repository
+        uses: actions/checkout@master
+      - name: Checkout submodules
+        uses: monikamikhaiel/resource-types-website/git-checkout-submodule-action@master
 # install go binaries and setup the environment 
       - name: Setup go environment
         uses: actions/setup-go@v2
