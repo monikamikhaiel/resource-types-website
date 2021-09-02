@@ -15,14 +15,9 @@ jobs:
         with:
           go-version: 1.16
           
-      - name: move to the tests folder 
+      - name: build and run test 
+        working-directory: ./warehouse
         run: |
-           pwd 
-           cd ./warehouse
-          
-      - name: build tests _test.go
-        run: go build -v *_tests.go
-        
-      - name: run tests _test.go
-        run: go test *_tests.go
+              go build -v
+              go test 
         
