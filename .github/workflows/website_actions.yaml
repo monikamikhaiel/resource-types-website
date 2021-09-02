@@ -11,10 +11,10 @@ jobs:
         uses: actions/checkout@v2
         with:
            submodules: true
-      - name: Checkout private tools
-        uses: actions/checkout@v2
-        with:
-           repository: monikamikhaiel/resource-types
+#      - name: Checkout private tools
+#       uses: actions/checkout@v2
+#       with:
+#            repository: monikamikhaiel/resource-types
 # install go binaries and setup the environment 
       - name: Setup go environment
         uses: actions/setup-go@v2
