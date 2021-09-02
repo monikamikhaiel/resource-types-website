@@ -9,13 +9,21 @@ jobs:
 # extract the latest version of the code 
       - name: Check out the repo
         uses: actions/checkout@v2
+        with:
+           submodules: true
+      - name: Checkout private tools
+        uses: actions/checkout@v2
+        with:
+           repository: monikamikhaiel/resource-types
 # install go binaries and setup the environment 
       - name: Setup go environment
         uses: actions/setup-go@v2
         with:
           go-version: 1.16
       - name: chcekout the 2nd repo of resources types 
-        run:  git submodule update --remote
+        run:  |
+               ls ./warehouse/resource-types 
+               git submodule update --remote
       - name: build and run test 
         working-directory: ./warehouse
         run: |
