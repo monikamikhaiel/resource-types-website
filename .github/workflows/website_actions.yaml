@@ -6,17 +6,7 @@ jobs:
     name: build and test go app 
     runs-on: ubuntu-latest
     steps:
-# extract the latest version of the code 
-     # - name: Check out the repo
-      #  uses: actions/checkout@v2
-  #      with:
-   #        submodules: true
-    #       path: ./resource-types
-#      - name: Checkout private tools
-#       uses: actions/checkout@v2
-#       with:
-#            repository: monikamikhaiel/resource-types
-   
+# extract the latest version of the code  
       - name: Checkout repository
         uses: actions/checkout@master
         with:
@@ -33,4 +23,12 @@ jobs:
               pwd
               go build -v
               go test 
+      - name: build and deploy main 
+        working-directory: ./warehouse
+        run: |
+              pwd
+              go build -v
+              go run 
+          
+              
         
