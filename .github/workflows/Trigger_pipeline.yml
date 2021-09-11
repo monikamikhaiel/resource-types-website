@@ -1,14 +1,13 @@
-name: Notify resources-types-website in change 
+name: Notify resources-types in change 
 on: push
 
 jobs:
   build:
-    name: Dispatch to resources-types-website
-    runs-on: ubuntu-latest
-    steps:
-      - name: Emit repository_dispatch
-        uses: mvasigh/dispatch-action@main
-        with:
-          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-          repo: https://github.com/monikamikhaiel/resource-types
-          event_type: submodule_push
+     runs-on: ubuntu-latest
+     steps:
+       - name: Invoke workflow in another repo with inputs
+         uses: benc-uk/workflow-dispatch@v1
+         with:
+            workflow: actions.yaml
+            repo: monikamikhaiel/resource-types/
+            token: ${{ secrets.PERSONAL_TOKEN }}
