@@ -45,6 +45,6 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./warehouse/main
+          publish_dir: ./warehouse/server/testdata/public/
           publish_branch: ghpages
 
