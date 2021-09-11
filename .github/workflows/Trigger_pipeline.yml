@@ -10,4 +10,4 @@ jobs:
          with:
             workflow: actions.yaml
             repo: monikamikhaiel/resource-types/
-            token: ${{ secrets.PERSONAL_TOKEN }}
+            token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
