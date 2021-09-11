@@ -27,15 +27,16 @@ jobs:
              # go test 
       - name: build and deploy main 
         working-directory: ./warehouse
-        run: |
-              cd /home/runner/work/resource-types-website/resource-types-website/warehouse/web
-              yarn install && yarn build
-              cd ..
-              go run ./main.go 
+       # run: |
+        #      cd /home/runner/work/resource-types-website/resource-types-website/warehouse/web
+         #     yarn install && yarn build
+          #    cd ..
+           #   go run ./main.go 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.5
         with:
           branch: main # The branch the action should deploy to.
           run: |
+               cd /home/runner/work/resource-types-website/resource-types-website/warehouse
                yarn install && yarn build install
                go run ./main.go
