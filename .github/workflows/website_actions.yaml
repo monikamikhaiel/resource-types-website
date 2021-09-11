@@ -40,4 +40,6 @@ jobs:
           run: |
                cd /home/runner/work/resource-types-website/resource-types-website/warehouse
                yarn install && yarn build install
+               pwd 
+               echo "This has been executed "
                go run ./main.go
