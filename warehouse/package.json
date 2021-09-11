@@ -21,5 +21,4 @@
     "format": "elm-format --elm-version=0.19 web --yes",
     "test": "cd web && elm-test"
   }
-  
 }
