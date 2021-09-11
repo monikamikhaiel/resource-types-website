@@ -27,7 +27,7 @@ jobs:
              # go test 
       - name: build and deploy main 
         working-directory: ./warehouse
-       # run: |
+        run: pwd
         #      cd /home/runner/work/resource-types-website/resource-types-website/warehouse/web
          #     yarn install && yarn build
           #    cd ..
