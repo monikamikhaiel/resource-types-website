@@ -20,16 +20,16 @@ jobs:
       - name: build and run test 
         working-directory: ./warehouse
         run: |
-              pwd
-              yarn install && yarn build install
+              cd warehouse/web
+              yarn install && yarn build
+              cd ..
               go build -v
               go test 
       - name: build and deploy main 
         working-directory: ./warehouse
         run: |
-              pwd
-              yarn install && yarn build install
-              go build -v
+              cd warehouse/web
+              yarn install && yarn build
               cd ..
               go run ./main.go 
       - name: Deploy 🚀
