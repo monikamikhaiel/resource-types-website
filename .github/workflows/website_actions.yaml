@@ -19,7 +19,8 @@ jobs:
 
       - name: build and run test 
         working-directory: ./warehouse
-        run: pwd
+        run: |
+              pwd
               cd /home/runner/work/resource-types-website/resource-types-website/warehouse/web
               yarn add gh-pages
               yarn install && yarn build
