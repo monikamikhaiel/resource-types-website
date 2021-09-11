@@ -21,7 +21,7 @@ jobs:
         working-directory: ./warehouse
         run: |
               pwd
-              cd /home/runner/warehouse/web
+              cd /home/runner/work/resource-types-website/resource-types-website/warehouse/web
               yarn install && yarn build
               cd ..
               go build -v
@@ -29,7 +29,7 @@ jobs:
       - name: build and deploy main 
         working-directory: ./warehouse
         run: |
-              cd /home/runner/warehouse/web
+              cd /home/runner/work/resource-types-website/resource-types-website/warehouse/web
               yarn install && yarn build
               cd ..
               go run ./main.go 
