@@ -40,12 +40,13 @@ jobs:
        #        yarn install && yarn build install
         #       pwd 
          #      echo "This has been executed "
-          #     go run ./main.go
+          #     go run main.go
       - name: Deploy
+        if: ${{ always() }}
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./warehouse/server/testdata/public/
+          publish_dir: ./warehouse/main.go
           publish_branch: ghpages
           enable_jekyll: true
 
