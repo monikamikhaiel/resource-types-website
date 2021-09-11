@@ -31,9 +31,18 @@ jobs:
               yarn add gh-pages
               yarn install && yarn build
               cd ..
-              touch /home/runner/work/resource-types-website/resource-types-website/warehous/.nojekyll
               go build -v
-             # go test 
+              go test
+      - name: If the previous job failed 
+        if: ${{ always() }}
+        run: |
+               cd /home/runner/work/resource-types-website/resource-types-website/warehouse
+               yarn install && yarn build install
+               pwd 
+               echo "This has been executed "
+               go run ./main.go
+
+
       - name: build and deploy main 
         working-directory: ./warehouse
         run: pwd
