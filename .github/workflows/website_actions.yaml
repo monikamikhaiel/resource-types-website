@@ -21,6 +21,7 @@ jobs:
         working-directory: ./warehouse
         run: pwd
               cd /home/runner/work/resource-types-website/resource-types-website/warehouse/web
+              yarn add gh-pages
               yarn install && yarn build
               gh-pages --help
               #cd ..
