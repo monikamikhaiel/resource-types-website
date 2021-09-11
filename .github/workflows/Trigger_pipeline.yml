@@ -1,0 +1,14 @@
+name: Notify resources-types-website in change 
+on: push
+
+jobs:
+  build:
+    name: Dispatch to resources-types-website
+    runs-on: ubuntu-latest
+    steps:
+      - name: Emit repository_dispatch
+        uses: mvasigh/dispatch-action@main
+        with:
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          repo: https://github.com/monikamikhaiel/resource-types
+          event_type: submodule_push
