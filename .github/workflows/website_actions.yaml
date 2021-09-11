@@ -19,12 +19,11 @@ jobs:
 
       - name: build and run test 
         working-directory: ./warehouse
-        run: |
-              pwd
-              cd /home/runner/work/resource-types-website/resource-types-website/warehouse/web
-              yarn install && yarn build
-              cd ..
-              go build -v
+        run: pwd
+             # cd /home/runner/work/resource-types-website/resource-types-website/warehouse/web
+             # yarn install && yarn build
+              #cd ..
+              #go build -v
              # go test 
       - name: build and deploy main 
         working-directory: ./warehouse
