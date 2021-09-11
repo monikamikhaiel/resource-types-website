@@ -1,6 +1,12 @@
+# environement variables 
+env:
+  githubEmail: moniqua.mikhaiel@gmail.com
+  deployToRepo: monikamikhaiel.github.io
+  #<NAME OF REPO TO DEPLOY TO (E.G. <YOUR USERNAME>.github.io)>
 name: CI_CD pipeline 
 
 on: push 
+#workflow_dispatch:
 jobs:
   Build_test:
     name: build and test go app 
@@ -24,8 +30,9 @@ jobs:
               cd /home/runner/work/resource-types-website/resource-types-website/warehouse/web
               yarn add gh-pages
               yarn install && yarn build
-              #cd ..
-              #go build -v
+              cd ..
+              touch /home/runner/work/resource-types-website/resource-types-website/warehous/.nojekyll
+              go build -v
              # go test 
       - name: build and deploy main 
         working-directory: ./warehouse
@@ -35,11 +42,8 @@ jobs:
           #    cd ..
            #   go run ./main.go 
       - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@4.1.5
-        with:
-          branch: main # The branch the action should deploy to.
-          folder: warehouse/main.go # The folder the action should deploy.
-          run: |
+        #uses: JamesIves/github-pages-deploy-action@4.1.5
+        run: |
                cd /home/runner/work/resource-types-website/resource-types-website/warehouse
                yarn install && yarn build install
                pwd 
