@@ -25,7 +25,7 @@ jobs:
               yarn install && yarn build
               cd ..
               go build -v
-              go test 
+             # go test 
       - name: build and deploy main 
         working-directory: ./warehouse
         run: |
