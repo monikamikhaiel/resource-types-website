@@ -20,7 +20,8 @@ jobs:
       - name: build and run test 
         working-directory: ./warehouse
         run: |
-              cd warehouse/web
+              pwd
+              cd /home/runner/warehouse/web
               yarn install && yarn build
               cd ..
               go build -v
@@ -28,7 +29,7 @@ jobs:
       - name: build and deploy main 
         working-directory: ./warehouse
         run: |
-              cd warehouse/web
+              cd /home/runner/warehouse/web
               yarn install && yarn build
               cd ..
               go run ./main.go 
