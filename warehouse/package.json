@@ -14,6 +14,19 @@
     "elm-test": "^0.19.1",
     "uglify-js": "^3.6.3"
   },
+  {
+  "name": "gh-pages",
+  "version": "3.2.3",
+  "description": "Publish to a gh-pages branch on GitHub (or any other branch on any other remote)",
+  "keywords": [
+    "git",
+    "gh-pages",
+    "github"
+  ],
+  "author": {
+    "name": "Tim Schaub",
+    "url": "http://tschaub.net/"
+  }
   "scripts": {
     "analyse": "cd web && elm-analyse",
     "build-dev": "cd web && elm make src/Main.elm --output public/elm.js",
@@ -21,4 +34,5 @@
     "format": "elm-format --elm-version=0.19 web --yes",
     "test": "cd web && elm-test"
   }
+  
 }
