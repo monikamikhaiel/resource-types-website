@@ -47,4 +47,5 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./warehouse/server/testdata/public/
           publish_branch: ghpages
+          enable_jekyll: true
 
